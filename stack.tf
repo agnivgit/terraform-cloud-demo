@@ -20,7 +20,10 @@ resource "aws_security_group" "mytfsg" {
 }
 
 resource "aws_instance" "myec2" {
-   ami = var.instanceId
-   instance_type = var.instanceType
-   vpc_security_group_ids = [aws_security_group.mytfsg.id]
+  ami                    = var.instanceId
+  instance_type          = var.instanceType
+  vpc_security_group_ids = [aws_security_group.mytfsg.id]
+  tags = {
+    Name = "tf-example-ec2"
+  }
 }
