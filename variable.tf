@@ -1,8 +1,8 @@
 variable "instanceType" {
-  default = "t2.micro"
+  default = "t2.nano"
 }
 variable "instanceId" {
-  default = ""
+  default = "ami-0323c3dd2da7fb37d"
 }
 variable "sg_ports" {
   type        = list(number)
